@@ -1,2 +1,37 @@
+
 .terraform/
 .env
+# Ignorer les fichiers Terraform locaux
+.terraform/
+.terraform.lock.hcl
+
+# Ignorer les fichiers d’état Terraform
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.backup
+
+# Ignorer les plans Terraform générés
+*.tfplan
+
+# Ignorer les fichiers de logs Terraform
+crash.log
+*.log
+
+# Ignorer les variables sensibles (si utilisées)
+*.auto.tfvars
+*.env
+
+# Ignorer les fichiers de sortie Terraform
+*.out
+
+# Ignorer les fichiers spécifiques à l'éditeur de code
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignorer les fichiers spécifiques aux systèmes d'exploitation
+.DS_Store
+Thumbs.db
+.gitignore

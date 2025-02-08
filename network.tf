@@ -3,8 +3,8 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "BachirRG"
-  location = "Canada Central"
+  name     = var.rgr
+  location = var.locations[0]
 }
 
 resource "azurerm_virtual_network" "vnet" {
