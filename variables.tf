@@ -24,9 +24,28 @@ variable "restos" {
 }
 variable "places" {
   type    = list(string)
-  default = ["Paradise","Pyramids of egypt","Pyramids of Maya","Space","Tubbataha Reefs"]
+  default = ["Paradise","Pyramidsofegypt","PyramidsofMaya","Space","TubbatahaReefs"]
 }
 variable "countries" {
   type    = list(string)
   default = ["italy","japan","china","russia","tanzania"]
+}
+locals {
+  merged_list = concat(var.restos, var.places, var.countries)
+}
+
+# Affichage du résultat pour vérifier la fusion
+
+variable "subscription_id"{
+  type=string
+}
+
+variable "client_id"{
+  type=string
+}
+variable "client_secret"{
+  type=string
+}
+variable "tenant_id"{
+  type=string
 }

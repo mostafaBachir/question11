@@ -1,6 +1,6 @@
 resource "azurerm_network_interface" "linux_nic" {
-  count = length(var.restos)
-  name                = "${var.restos[count.index]}-linux-nic"
+  count = length(local.merged_list)
+  name                = lower("${local.merged_list[count.index]}-linux-nic")
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -12,8 +12,8 @@ resource "azurerm_network_interface" "linux_nic" {
 }
 
 resource "azurerm_linux_virtual_machine" "rg" {
-  count = length(var.restos)
-  name                = "${var.restos[count.index]}-linux"
+  count = length(local.merged_list)
+  name                = lower("${local.merged_list[count.index]}-linux")
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   size                = "Standard_F2"

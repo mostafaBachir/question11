@@ -12,3 +12,9 @@ output "target_countries" {
   value = var.countries
   description = "Pays à explorer"
 }
+output "merged_things" {
+value = concat(var.restos, var.places, var.countries)
+}
+output "merged_list" {
+  value = local.merged_list
+}
